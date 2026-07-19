@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Contact Us</h1>
+      <p class="lead">Fill out the form and we'll get back to you shortly.</p>
+    </header>
+
+    <form class="form" action="#" method="post" novalidate>
+      <div class="grid">
+        <label class="form-group">
+          <span>Full name</span>
+          <input type="text" name="name" placeholder="Jane Doe" required />
+        </label>
+
+        <label class="form-group">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </label>
+
+        <label class="form-group">
+          <span>Phone</span>
+          <input type="tel" name="phone" placeholder="+1 555 555 5555" pattern="[\d+\-\s()]{7,}" />
+        </label>
+
+        <label class="form-group">
+          <span>Preferred date</span>
+          <input type="date" name="date" />
+        </label>
+      </div>
+
+      <fieldset class="fieldset">
+        <legend>Inquiry type</legend>
+        <label><input type="radio" name="type" value="support" checked /> Support</label>
+        <label><input type="radio" name="type" value="sales" /> Sales</label>
+        <label><input type="radio" name="type" value="other" /> Other</label>
+      </fieldset>
+
+      <label class="form-group">
+        <span>Subject</span>
+        <select name="subject">
+          <option value="">Select a subject</option>
+          <option value="billing">Billing</option>
+          <option value="technical">Technical issue</option>
+          <option value="feedback">Feedback</option>
+        </select>
+      </label>
+
+      <label class="form-group">
+        <span>Message</span>
+        <textarea name="message" rows="6" placeholder="Tell us about your issue..." required></textarea>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" name="subscribe" />
+        <span>Subscribe to our newsletter</span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Send message</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Example Company — Accessible, Responsive Form</small>
+    </footer>
+  </main>
+
+  <script>
+    // Small enhancement: fill the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

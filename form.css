@@ -1,0 +1,135 @@
+:root{
+  --bg:#aabedb;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow:0 6px 20px rgba(16,24,40,0.08);
+  --gap:1rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#eef2ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  width:100%;
+  max-width:880px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:2rem;
+}
+
+/* Header */
+.header{margin-bottom:1.25rem}
+.header h1{margin:0 0 .25rem;font-size:1.5rem}
+.header .lead{margin:0;color:var(--muted);font-size:.95rem}
+
+/* Form layout */
+.form{
+  display:block;
+  gap:var(--gap);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--gap);
+  margin-bottom:var(--gap);
+}
+
+/* Single column on small screens */
+@media (max-width:680px){
+  .grid{grid-template-columns:1fr}
+}
+
+/* Form controls */
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  font-size:.95rem;
+}
+.form-group span{font-weight:600}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea{
+  padding:.65rem .75rem;
+  border:1px solid #c5cc97;
+  border-radius:8px;
+  background:linear-gradient(#fff,#fbfdff);
+  font-size:1rem;
+  outline:none;
+  transition:box-shadow .12s, border-color .12s;
+}
+input:focus, select:focus, textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+}
+
+/* Fieldset (radios) */
+.fieldset{
+  border:1px solid #eef2ff;
+  padding:.75rem;
+  border-radius:8px;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  margin-bottom:var(--gap);
+}
+.fieldset legend{font-weight:600}
+
+/* Checkbox row */
+.checkbox{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  color:var(--muted);
+  margin-bottom:var(--gap);
+}
+
+/* Actions */
+.actions{
+  display:flex;
+  gap:.75rem;
+  justify-content:flex-start;
+  margin-top:.5rem;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:.65rem 1rem;
+  border-radius:8px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-weight:600;
+  background:#f3f4f6;
+  color:#111827;
+}
+.btn.primary{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 6px 18px rgba(37,99,235,0.18);
+  border-color:transparent;
+}
+.btn:active{transform:translateY(1px)}
+.btn:focus{outline:2px solid rgba(37,99,235,0.18);outline-offset:2px}
+
+/* Footer */
+.footer{margin-top:1.5rem;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* Accessibility helpers */
+input[required], textarea[required]{box-shadow:none}
